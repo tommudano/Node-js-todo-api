@@ -23,7 +23,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true 
   //   console.log('Unable to fetch todos', err);
   // });
 
-  db.collection('Users').find({name: 'Tom Mudano'}).toArray().then((docs) => {
+  let id = '5c45fbc49876530c642e8553';
+
+  db.collection('Users').find({_id: new ObjectID(id)}).toArray().then((docs) => {
     console.log('Users');
     console.log(JSON.stringify(docs, undefined, 2));
   }, (err) => {

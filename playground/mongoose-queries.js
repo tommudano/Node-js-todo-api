@@ -29,13 +29,13 @@ const {User} = require('./../server/models/user');
 //   console.log('Todo by ID', todo);
 // }).catch((e) => console.log(e));
 
-let id = '5c45da1890d53325acd27261';
+let id = '5c45fbc49876530c642e8553';
 
 if(!ObjectID.isValid(id)) {
   console.log('ID is not valid.');
 }
 
-User.findById(id).then((user) => {
+User.find({_id: new ObjectID('5c45fbc49876530c642e8553')}).then((user) => {
   if(!user) {
     return console.log('User not found; no matching ID.');
   }
